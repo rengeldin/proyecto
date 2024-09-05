@@ -1,277 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>mola_moda</title>
-    <script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="icon" href="assets/img/logo1.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="watsap.css">
+    <title>Juego de Preguntas</title>
 </head>
-
 <body>
-    <header class="encabezado">
-        <div class="contenedor-navegacion">
-            <div class="contenido-navegacion contenedor">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="assets/img/logo1.png" alt="">
-                    </a>
-                </div>
-                <div class="hamburguesa">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-        </div>
-        <div class="contenido-header">
-            <div class="contenedor-encabezado">
-                <div class="texto-encabezado">
-                    <h2>Mola moda!</h2>
-                </div>
-                <video autoplay loop muted>
-                    <source src="/assets/video.mp4">
-                </video>
-            </div>
-        </div>
-    </header>
+    <video autoplay muted loop id="background-video">
+        <source src="img/fondo.mp4" type="video/mp4">
+    </video>
+    <img src="img/logo1.png" alt="Logo" id="logoEsquina">
 
-    <div class="contenedor-nosotros contenedor">
-        <div class="texto-nosotros">
-            <p class="bienvenida">Bienvenido a!</p>
-            <h1>Mola Moda</h1>
-            <p>Lucía Martínez, una talentosa diseñadora de moda en La Paz, Bolivia, alcanzó notoriedad por sus creaciones audaces y poco convencionales. Aunque su estilo rompedor prometía revolucionar la moda boliviana, pronto fue etiquetado como "mola moda" y enfrentó rechazo en la industria local. A pesar de las críticas, Lucía se mantuvo fiel a su visión y encontró inspiración en su autenticidad, convirtiéndose en un símbolo de valentía y autoexpresión para quienes buscan romper moldes.
-            </p>
-        </div>
-        <div class="imagenes-nosotros">
-            <div class="imagen1">
-                <img data-src="assets/img/img.jpg" alt="mujer comiendo pizza">
+    <div id="pantalla-inicial">
+        <h1>Mente Maestra</h1>
+        <h1>¿Te atreves a contestar?</h1>
+        <button class="btn" onclick="comenzarJuego()">Comenzar</button>
+    </div>
+
+    <div id="pantalla-juego" class="pantalla-juego">
+        <img id="imgBandera" src="" alt="Imagen">
+        <div class="pregunta" id="preguntaActual"></div>
+        <div class="opciones">
+            <div class="opcion" id="op1" onclick="comprobarRespuesta(1)">
+                <div class="letra" id="l1">A</div>
+                <div class="nombre" id="n1"></div>
             </div>
-            <div class="imagenes2">
-                <img data-src="assets/img/img1.jpg" alt="mujeres comiendo pizza">
-                <img data-src="assets/img/img2.jpg" alt="plato con pasta">
+            <div class="opcion" id="op2" onclick="comprobarRespuesta(2)">
+                <div class="letra" id="l2">B</div>
+                <div class="nombre" id="n2"></div>
+            </div>
+            <div class="opcion" id="op3" onclick="comprobarRespuesta(3)">
+                <div class="letra" id="l3">C</div>
+                <div class="nombre" id="n3"></div>
             </div>
         </div>
     </div>
 
-    <section class="menu contenedor">
-        <h2 class="texto-platillos">Lo Más Vendido de la Temporada</h2>
-        <div class="botones-platillos">
-            <button class="todos btn btn-verde">Todos</button>
-            <button class="ensaladas btn btn-verde">Vestidos</button>
-            <button class="pasta btn btn-verde">Blusa</button>
-            <button class="pizza btn btn-verde">Pantalon</button>
-            <button class="postres btn btn-verde">Zapato</button>
-        </div>
-        <div class="platillos">
-            <div class="platillo" data-platillo="ensalada">
-                <img data-src="assets/img/vestido.jpeg" alt="ensalada">
-                <h2>Vestido</h2>
-                <div class="precio">
-                    <p>120.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                    
-                </div>
-            </div>
-            <div class="platillo" data-platillo="ensalada">
-                <img data-src="assets/img/vestido1.jpeg" alt="ensalada">
-                <h2>Vestido</h2>
-                <div class="precio">
-                    <p>180.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="ensalada">
-                <img data-src="assets/img/vestido2.jpeg" alt="ensalada">
-                <h2>Vestido</h2>
-                <div class="precio">
-                    <p>250.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pasta">
-                <img data-src="assets/img/blusa.jpeg" alt="pasta">
-                <h2>Blusa</h2>
-                <div class="precio">
-                    <p>70.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pasta">
-                <img data-src="assets/img/blusa1.jpeg" alt="pasta">
-                <h2>Blusa</h2>
-                <div class="precio">
-                    <p>120.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pasta">
-                <img data-src="assets/img/blusa2.jpeg" alt="pasta">
-                <h2>Blusa</h2>
-                <div class="precio">
-                    <p>140.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pizza">
-                <img data-src="assets/img/pantalon.jpeg" alt="pizza">
-                <h2>Pantalon</h2>
-                <div class="precio">
-                    <p>170.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pizza">
-                <img data-src="assets/img/pantalon1.jpeg" alt="pizza">
-                <h2>Pantalon</h2>
-                <div class="precio">
-                    <p>150.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pizza">
-                <img data-src="assets/img/pantalon2.jpeg" alt="pizza">
-                <h2>Pantalon</h2>
-                <div class="precio">
-                    <p>95.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="postre">
-                <img data-src="assets/img/zapato.jpeg" alt="postre">
-                <h2>Zapato</h2>
-                <div class="precio">
-                    <p>120.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="postre">
-                <img data-src="assets/img/zapato1.jpeg" alt="postre">
-                <h2>Zapato</h2>
-                <div class="precio">
-                    <p>180.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="postre">
-                <img data-src="assets/img/zapato2.jpeg" alt="postre">
-                <h2>Zapato</h2>
-                <div class="precio">
-                    <p>150.Bs</p>
-                    <a href="https://wa.link/w5y8pu" target="_blank">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
-                    </a>          
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="separador">
-        <div class="contenido-separador contenedor">
-            <center><h2>"Deslumbra cada día: el mundo te observa."</h2></center>
-            
-            <a href="#" class=""></a>
-        </div>
+    <div id="pantalla-final">
+        <h2>Resultados</h2>
+        <div class="resultado">Respuestas Correctas: <span id="numCorrectas"></span></div>
+        <div class="resultado">Respuestas Incorrectas: <span id="numIncorrectas"></span></div>
+        <button class="btn" onclick="volverAlInicio()">Volver al Inicio</button>
     </div>
-    <section class="chef contenedor">
-        <h2>Nuestra Filosofía</h2>
-        <div class="contenido-chef">
-            <div class="texto-chef">
-                </h3>
-                <p>La diversidad es el corazón de nuestra marca. En Mola Moda, exploramos y fusionamos estilos globales para crear vestidos, zapatos, blusas y accesorios únicos.
-                    Cada prenda de nuestra colección es una celebración de diferentes culturas y técnicas, pensada para resaltar tu estilo y personalidad. Nuestra moda no solo te viste, sino que te conecta con el mundo y sus maravillas.</p>
-            </div>
-            <div class="imagen-chef">
-                <img data-src="/assets/img/img12.jpeg" alt="fotografia del chef">
-            </div>
-        </div>
-    </section>
-    <div class="pie-pagina ">
-        <div class="contenedor-piepagina contenedor">
-            <div class="info">
-                <h3>Dirección</h3>
-                <p>La paz-Radial 12</p>
-            </div>
-            <div class="info">
-                <h3>Días especiales</h3>
-                <p>Sabados y Jueves 7am - 11pm</p>
-                <p>+3123410921</p>
-            </div>
-            <div class="info">
-                <h3>Horarios</h3>
-                <p>Lunes - Domingo 7am - 11pm</p>
-                <div class="redes-sociales redes-pie">
-                    <a href="https://www.facebook.com/share/XWv1Ew4StGbQKCU4/?mibextid=qi2Omg" target="negra">
-                        <i class="fab fa-facebook-square"></i>
-                    </a>
-                    <a href="https://www.instagram.com/mola_moda00?igsh=M2J2YjZsM3l3ZWdv" target="negra">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-                
-                
-            </div>
-            <div class="info">
-                <h3>Noticias</h3>
-                <p>suscribete para recibir más noticias</p>
-                
-            </div>
-        </div>
-    </div>
-    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://wa.me/59169107615" class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+    </a>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
